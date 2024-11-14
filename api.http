@@ -1,0 +1,36 @@
+### GET all Movies
+GET http://localhost:1234/movies
+
+### GET a movie by ID
+
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### GET a movie by genre
+
+GET http://localhost:1234/movies?genre=action
+
+### CREATE a movie
+
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "The Good Father 3",
+    "year": 2004,
+    "director": "Lana Wachowski",
+    "duration": 152,
+    "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+    "genre": [
+        "Action",
+        "Drama"
+    ],
+    "rate": 6
+}
+
+### Upload part of a  movie
+PATCH http://localhost:1234/movies/6a360a18-c645-4b47-9a7b-2a71babbf3e0
+Content-Type: application/json
+
+{
+    "year": 2010
+}
